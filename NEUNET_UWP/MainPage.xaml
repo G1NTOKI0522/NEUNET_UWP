@@ -9,6 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button Content="Button" HorizontalAlignment="Left" Margin="624,353,0,0" VerticalAlignment="Top" Height="86" Width="315" FontSize="48"/>
+        <ComboBox HorizontalAlignment="Left" Margin="557,201,0,0" VerticalAlignment="Top" Height="98" Width="438">
+            <ComboBoxItem Content="UWP" Height="100" Width="100"/>
+            <ComboBoxItem Content="Combo" Height="100" Width="100"/>
+
+        </ComboBox>
+
+
 
     </Grid>
 </Page>
