@@ -8,14 +8,39 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="624,353,0,0" VerticalAlignment="Top" Height="86" Width="315" FontSize="48"/>
-        <ComboBox HorizontalAlignment="Left" Margin="557,201,0,0" VerticalAlignment="Top" Height="98" Width="438">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="512"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="256"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Blue" Grid.Column="0" Grid.Row="0" />
+        <Rectangle Fill="Red" Grid.Row="1" />
+        <Rectangle Fill="Green" Grid.Column="1" />
+        <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1" />
+        <Button Content="Go!" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="86" Width="325" FontSize="48"
+                Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="1"/>
+        <ComboBox 
+            HorizontalAlignment="Left" 
+            Margin="90,160,-512,-256" 
+            VerticalAlignment="Top" 
+            Height="96" Width="422" 
+            Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
             <ComboBoxItem Content="UWP" Height="100" Width="100"/>
             <ComboBoxItem Content="Combo" Height="100" Width="100"/>
-
+            <ComboBoxItem Content="GUI" Height="100" Width="100"/>
         </ComboBox>
-
-
-
+        <TextBlock Grid.ColumnSpan="1" HorizontalAlignment="Left" 
+                   Grid.RowSpan="1" Text="Hello"
+                   Grid.Row="0" Grid.Column="1"
+                   TextWrapping="Wrap" FontSize="180"
+                   VerticalAlignment="Top" Height="246" Width="683" 
+                   SelectionChanged="TextBlock_SelectionChanged"/>
     </Grid>
 </Page>
